@@ -18,9 +18,9 @@ interface Props {
 const LoginPage: React.FC<Props> = ({ onLogin }) => {
   const { loggedIn } = useAuth();
 
-  const handleLogin = () => {
-    auth.signInWithEmailAndPassword('test1@example.org', 'test1234')
-
+  const handleLogin = async () => {
+    const credential = await auth.signInWithEmailAndPassword('test1@example.org', 'test1234')
+    console.log('credential:', credential);
   };
 
 
